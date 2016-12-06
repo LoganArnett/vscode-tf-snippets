@@ -150,5 +150,80 @@
             "}"
 		],
 		"description": "Create a new S3 Bucket Policy"
-	}
+	},
+    "SNS Topic": {
+        "prefix": "aws-sns-topic",
+        "body": [
+            "resource \"aws_sns_topic\" \"${name:Name}\" {",
+            "   name = \"${name:Name}\"",
+            "}"
+        ],
+        "description": "Create a new SNS Topic"
+    },
+    "SNS Topic Policy": {
+        "prefix": "aws-sns-topic-policy",
+        "body": [
+            "resource \"aws_sns_topic_policy\" \"${name:Name}\" {",
+            "   arn = \"${arn:Topic Arn}\"",
+            "   policy = <<POLICY ",
+            "{}",
+            "POLICY",
+            "}"
+        ],
+         "description": "Create a new SNS Topic Policy"
+    },
+    "SNS Topic Subscription": {
+        "prefix": "aws-sns-topic-subscription",
+        "body": [
+            "resource \"aws_sns_topic_subscription\" \"${name:Name}\" {",
+            "   topic_arn = \"${arn:Topic Arn}\"",
+            "   protocol = \"${proto:Protocol}\"",
+            "   endpoint = \"${point:Endpoint}\"",
+            "}"
+        ],
+         "description": "Create a new SNS Topic Subscription"
+    },
+    "SNS Queue": {
+        "prefix": "aws-sqs-queue",
+        "body": [
+            "resource \"aws_sqs_queue\" \"${name:Name}\" {",
+            "   name = \"${name:Name}\"",
+            "}"
+        ],
+         "description": "Create a new SQS Queue"
+    },
+    "SQS Policy": {
+        "prefix": "aws-sqs-queue-policy",
+        "body": [
+            "resource \"aws_sqs_queue_policy\" \"${name:Name}\" {",
+            "   queue_url = \"${queuer:Queue ID}\"",
+            "   policy = <<POLICY ",
+            "{}",
+            "POLICY",
+            "}"
+        ],
+         "description": "Create a new SQS Queue Policy"
+    },
+    "VPC": {
+        "prefix": "aws-vpc",
+        "body": [
+            "resource \"aws_vpc\" \"${name:Name}\" {",
+            "   cidr_block = \"${cidr:CIDR Block}\"",
+            "}"
+        ],
+         "description": "Create a new VPC"
+    },
+    "Subnet": {
+        "prefix": "aws-subnet",
+        "body": [
+            "resource \"aws_subnet\" \"${name:Name}\" {",
+            "   vpc_id = \"${id:VPC ID}\"",
+            "   cidr_block = \"${cidr:CIDR Block}\"",
+            "   tags {",
+            "     Name = \"${name:Name}\"",
+            "   }",
+            "}"
+        ],
+         "description": "Create a new VPC Subnet"
+    }
 }
