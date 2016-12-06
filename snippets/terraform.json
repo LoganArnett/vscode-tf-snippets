@@ -1,0 +1,109 @@
+{
+	"Output": {
+		"prefix": "tfout",
+		"body": [
+			"output \"${name:Name}\" {",
+            "   value = \"${value:Value}\"",
+            "}"
+		],
+		"description": "Create a new Output"
+	},
+	"Variable": {
+		"prefix": "tfvar",
+		"body": [
+			"variable \"${name:Name}\" {",
+            "   description = \"${description:Description}\"",
+			"   default = \"${default:Default Value}\"",
+            "}"
+		],
+		"description": "Create a new Variable"
+	},
+    "AWS Provider": {
+		"prefix": "aws",
+		"body": [
+			"provider \"aws\" {",
+            "   region = \"${region:Region}\"",
+            "}"
+		],
+		"description": "Create a new AWS Provider"
+	},
+    "EC2 Instance": {
+		"prefix": "aws-instance",
+		"body": [
+			"resource \"aws_instance\" \"${name:Name}\" {",
+            "   ami = \"${id:AMI Id}\"",
+			"   instance_type = \"${type:Instance Type}\"",
+            "   tags {",
+            "     Name = \"HelloWorld\"",
+            "   }",
+            "}"
+		],
+		"description": "Create a new EC2 Instance"
+	},
+    "Beanstalk App": {
+		"prefix": "aws-beanstalk-app",
+		"body": [
+			"resource \"aws_elastic_beanstalk_application\" \"${name:Name}\" {",
+            "   name = \"${name:Name}\"",
+			"   description = \"${desc:Description}\"",
+            "}"
+		],
+		"description": "Create a new Beanstalk App"
+	},
+    "Beanstalk Environment": {
+		"prefix": "aws-beanstalk-env",
+		"body": [
+			"resource \"aws_elastic_beanstalk_environment\" \"${name:Name}\" {",
+            "   name = \"${name:Name}\"",
+            "   application = \"${app:Beanstalk Application}\"",
+			"   solution_stack_name = \"${stack:Optional Solution Stack}\"",
+            "   setting {",
+            "     namespace = \"aws:ec2:vpc\"",
+            "     name = \"VPCId\"",
+            "     value = \"vpc-xxxxxxxx\"",
+            "   }",
+            "}"
+		],
+		"description": "Create a new Beanstalk Environment"
+	},
+    "S3 Bucket": {
+		"prefix": "aws-bucket",
+		"body": [
+			"resource \"aws_s3_bucket\" \"${name:Name}\" {",
+            "   bucket = \"${name:Name}\"",
+            "   tags {",
+            "     Name = \"${name:Name}\"",
+            "   }",
+            "}"
+		],
+		"description": "Create a new S3 Bucket"
+	},
+    "S3 Bucket Hosting": {
+		"prefix": "aws-bucket-hosting",
+		"body": [
+			"resource \"aws_s3_bucket\" \"${name:Name}\" {",
+            "   bucket = \"${name:Name}\"",
+            "   acl = \"public-read\"",
+            "   policy = \"${policy:Bucket Policy}\"",
+            "   website {",
+            "     index_document = \"index.html\"",
+            "     error_document = \"error.html\"",
+            "     routing_rules = <<EOF",
+            "[{",
+            "  \"Condition\": {",
+            "      \"KeyPrefixEquals\": \"docs/\"",
+            "   }",
+            "  \"Redirect\": {",
+            "      \"ReplaceKeyPrefixWith\": \"documents/\"",
+            "   }",
+            "}]",
+            "EOF",
+            "   }",
+            "   tags {",
+            "     Name = \"${name:Name}\"",
+            "   }",
+            "}"
+		],
+		"description": "Create a new S3 Bucket for Static Hosting"
+	}
+}

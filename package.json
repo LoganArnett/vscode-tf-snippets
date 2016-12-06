@@ -1,0 +1,63 @@
+{
+  "name": "tf-snippets",
+	"displayName": "Simple Terraform Snippets",
+	"description": "Easy to use Terraform Snippets for your .tf files",
+	"icon": "images/tf.png",
+	"version": "0.1.0",
+	"publisher": "loganarnett",
+	"galleryBanner": {
+		"color": "#0000FF",
+		"theme": "dark"
+	},
+	"license": "MIT",
+	"bugs": {
+		"url": "https://github.com/Microsoft/vscode-spell-check/issues",
+		"email": "smcbreen@microsoft.com"
+	},
+	"homepage": "https://github.com/Microsoft/vscode-spell-check/blob/master/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Microsoft/vscode-spell-check.git"
+	},
+	"categories": [
+		"Linters", "Languages", "Other"
+	],
+	"engines": {
+		"vscode": "0.10.x"
+	},
+	"main": "./out/extension",
+	"activationEvents": [
+		"onLanguage:markdown"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "Spell.suggestFix",
+				"title": "Spell Checker Suggestions"
+			}
+		],
+		"keybindings": [
+			{
+				"command": "Spell.suggestFix",
+				"key": "Alt+."
+			}
+		]
+	},
+	"badges": [
+		{
+			"url": "https://david-dm.org/Microsoft/vscode-spell-check.svg",
+			"href": "https://david-dm.org/Microsoft/vscode-spell-check",
+			"description": "Dependency Status"
+		}
+	],
+	"scripts": {
+		"vscode:prepublish": "node ./node_modules/vscode/bin/compile",
+		"compile": "node ./node_modules/vscode/bin/compile -watch -p ./"
+	},
+	"dependencies": {
+		"teacher": "^0.0.1"
+	},
+	"devDependencies": {
+		"vscode": "^0.11.x"
+	}
+}
