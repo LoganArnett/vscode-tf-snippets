@@ -105,5 +105,50 @@
             "}"
 		],
 		"description": "Create a new S3 Bucket for Static Hosting"
+	},
+    "S3 Bucket Notification": {
+		"prefix": "aws-bucket-notification",
+		"body": [
+			"resource \"aws_s3_bucket_notification\" \"${name:Name}\" {",
+            "   bucket = \"${name:Name}\"",
+            "   topic {",
+            "     topic_arn = \"${topic:Topic Arn}\"",
+            "     events = [\"List of Events\"]",
+            "     filter_suffix = \"${suffix:i.e. .log\"",
+            "   }",
+            "   queue {",
+            "     queue_arn = \"${queue:Queue Arn}\"",
+            "     events = [\"List of Events\"]",
+            "     filter_suffix = \"${suffix:i.e. .log\"",
+            "   }",
+            "   lambda_function {",
+            "     lambda_function_arn = \"${lambda:Lambda Function Arn}\"",
+            "     events = [\"List of Events\"]",
+            "     filter_suffix = \"${suffix:i.e. .log\"",
+            "   }",
+            "}"
+		],
+		"description": "Create a new S3 Bucket Notification for SNS or SQS Topic or Lambda Function"
+	},
+    "S3 Bucket Object": {
+		"prefix": "aws-bucket-object",
+		"body": [
+			"resource \"aws_s3_bucket_object\" \"${name:Name}\" {",
+            "   bucket = \"${name:Name}\"",
+            "   key = \"${key:Key}\"",
+            "   source = \"${path:path/to/file}\"",
+            "}"
+		],
+		"description": "Create a new S3 Bucket Object"
+	},
+    "S3 Bucket Policy": {
+		"prefix": "aws-bucket-policy",
+		"body": [
+			"resource \"aws_s3_bucket_policy\" \"${name:Name}\" {",
+            "   bucket = \"${name:Name}\"",
+            "   policy = \"${policy:Policy}\"",
+            "}"
+		],
+		"description": "Create a new S3 Bucket Policy"
 	}
 }
