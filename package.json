@@ -9,6 +9,14 @@
 		"color": "#0000FF",
 		"theme": "dark"
 	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/loganarnett/vscode-tf-snippets"
+	},
+	"bugs": {
+		"url": "https://github.com/loganarnett/vscode-tf-snippets/issues",
+		"email": "logan@loganarnett.com"
+	},
 	"license": "MIT",
 	"categories": [
 		"Snippets"
