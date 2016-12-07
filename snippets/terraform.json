@@ -183,7 +183,7 @@
         ],
          "description": "Create a new SNS Topic Subscription"
     },
-    "SNS Queue": {
+    "SQS Queue": {
         "prefix": "aws-sqs-queue",
         "body": [
             "resource \"aws_sqs_queue\" \"${name:Name}\" {",
