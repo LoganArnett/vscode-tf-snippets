@@ -1,38 +1,38 @@
 {
-  "name": "tf-snippets",
-	"displayName": "Simple Terraform Snippets",
-	"description": "Easy to use Terraform Snippets for your .tf files",
-	"icon": "images/tf.png",
-	"version": "0.1.0",
-	"publisher": "loganarnett",
-	"galleryBanner": {
-		"color": "#0000FF",
-		"theme": "dark"
-	},
-	"repository": {
-		"type": "git",
-		"url": "https://github.com/loganarnett/vscode-tf-snippets"
-	},
-	"bugs": {
-		"url": "https://github.com/loganarnett/vscode-tf-snippets/issues",
-		"email": "logan@loganarnett.com"
-	},
-	"license": "MIT",
-	"categories": [
-		"Snippets"
-	],
-	"engines": {
-		"vscode": "0.10.x"
-	},
-	"contributes": {
-		"snippets": [
-			{
-				"language": "terraform",
-				"path": "./snippets/terraform.json"
-			}
-		]
-	},
-	"devDependencies": {
-		"vscode": "^0.11.x"
-	}
+    "name": "tf-snippets",
+    "displayName": "Simple Terraform Snippets",
+    "description": "Easy to use Terraform Snippets for your .tf files",
+    "icon": "images/tf.png",
+    "version": "0.4.0",
+    "publisher": "loganarnett",
+    "galleryBanner": {
+        "color": "#232323",
+        "theme": "dark"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/loganarnett/vscode-tf-snippets"
+    },
+    "bugs": {
+        "url": "https://github.com/loganarnett/vscode-tf-snippets/issues",
+        "email": "logan@loganarnett.com"
+    },
+    "license": "MIT",
+    "categories": [
+        "Snippets"
+    ],
+    "engines": {
+        "vscode": "0.10.x"
+    },
+    "contributes": {
+        "snippets": [
+            {
+                "language": "terraform",
+                "path": "./snippets/terraform.json"
+            }
+        ]
+    },
+    "devDependencies": {
+        "vscode": "^0.11.x"
+    }
 }
