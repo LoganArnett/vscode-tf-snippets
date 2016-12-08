@@ -18,6 +18,15 @@
 		],
 		"description": "Create a new Variable"
 	},
+    "Module": {
+		"prefix": "tfmod",
+		"body": [
+			"module \"${name:Name}\" {",
+            "   source = \"${source:Source}\"",
+            "}"
+		],
+		"description": "Create a new Module"
+	},
     "AWS Provider": {
 		"prefix": "aws",
 		"body": [
